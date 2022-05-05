@@ -13,4 +13,4 @@ def pascal_triangle(n):
     return arr
 
 
-print(pascal_triangle(5))
+print(pascal_triangle(6))

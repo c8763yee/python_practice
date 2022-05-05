@@ -64,9 +64,13 @@ class vector:
         self.arr[self.size] = None
 
     def remove(self, item):
-        for i in range(self.size):
-            if self.arr[i] == item:
-                self.delete(i)
+        idx = 0
+        while self.arr[idx] != None:
+            if self.arr[idx] == item:
+                self.delete(idx)
+
+            else:
+                idx += 1
 
     def find(self, item):
         for i in range(self.arr):
@@ -80,12 +84,12 @@ class vector:
             return
 
         self.size = len(lst)
-        if self.size >= self.capacity:
+        if self.size > self.capacity:
             self._resize(2**int(1 + log2(self.size)))
         self.arr = lst
 
 
 x = vector(16)
-x.set_list([1] * 16)
+x.set_list([1, 2, 3, 4] * 4)
 x.remove(1)
 print(x.arr, x.size, x.capacity, sep=', ')
