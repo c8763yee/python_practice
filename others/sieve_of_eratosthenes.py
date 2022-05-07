@@ -23,9 +23,4 @@ def eratisthenes(n):
     return filter(lambda x: x, [i for i in range(2, n + 1) if prime[i]])
 
 
-dic = {name: timeit(f"{name}(100)000", number=1, globals=globals(
-)) for name in ['eratisthenes', 'general']}
-
-# compare to general find_prime
-print(f"use sieve of eratosthenes:{dic['eratisthenes']}")
-print(f"use general:{dic['general']}")
+print(list(eratisthenes(220)))
